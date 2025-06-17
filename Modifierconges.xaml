@@ -1,0 +1,30 @@
+﻿<Window x:Class="Dashboard_Admin.Modifierconges"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dashboard_Admin"
+        mc:Ignorable="d"
+        Title="Modifierconges" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel>
+            <TextBlock Text="DateDeDebut :" VerticalAlignment="Center"/>
+            <TextBox Name="txtDateDeDebut" Grid.Row="1" Margin="5"/>
+
+            <TextBlock Text="DateDeFin :" Grid.Row="2" VerticalAlignment="Center"/>
+            <TextBox Name="txtDateDeFin" Grid.Row="3" Margin="5"/>
+
+            <TextBlock Text="Nombre_jour :" VerticalAlignment="Center"/>
+            <TextBox Name="txtNombre_jour" Grid.Row="3" Margin="5"/>
+        </StackPanel>
+        <Button Content="Valider" Grid.Row="4" Click="BtnModification_Click" HorizontalAlignment="Right" VerticalAlignment="Center" />
+    
+    </Grid>
+</Window>

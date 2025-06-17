@@ -1,0 +1,40 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="Dashboard_Admin.CongesPage"
+        av:DesignHeight="822.8" av:DesignWidth="604.8" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Barre de navigation -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Déconnexion" Click="BtnDeconnexion_Click" Width="100"/>
+            <Button Content="retour" Click="BtnRetour_Click" HorizontalAlignment="Left"  Width="100" VerticalAlignment="Top" />
+        </StackPanel>
+
+        <DataGrid x:Name="dataGridConge" AutoGenerateColumns="False"  Grid.Row="1" CanUserAddRows="False" SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding IdConges}" Width="*"/>
+                <DataGridTextColumn Header="DateDeDebut" Binding="{Binding DateDeDebut}" Width="*"/>
+                <DataGridTextColumn Header="DateDeFin" Binding="{Binding DateDeFin}" Width="*"/>
+                <DataGridTextColumn Header="Nombre de jour" Binding="{Binding Nombre_jour}" Width="*"/>
+                <DataGridTextColumn Header="Statut" Binding="{Binding Statut}" Width="*"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Content="Ajouter" Click="BtnAjouter_Click" CommandParameter="{Binding}" Margin="5"/>
+                                <Button Content="Modifier" Click="BtnModification_Click" Margin="5"/>
+                                <Button Content="Supprimer" Click="BtnSupprimer_Click" Margin="5"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+
+</Window>
